@@ -103,14 +103,21 @@ body {
 
 /* File Upload */
 .file-drop-area {
+    display: flex;                 
+    flex-direction: column;        
+    align-items: center;           
+    justify-content: center;       
     border: 2px dashed var(--border-color);
-    border-radius: 8px;
-    padding: 2rem;
+    padding: 32px;
     text-align: center;
+    border-radius: 12px;
     cursor: pointer;
-    position: relative;
-    transition: border-color 0.2s;
-    background: #fafafa;
+    width: 100%;                   
+    min-height: 160px;             
+}
+
+.file-input {
+    display: none;
 }
 
 .file-drop-area:hover {

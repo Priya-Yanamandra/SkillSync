@@ -36,7 +36,6 @@ let resumeText = "";
 let chartInstance = null;
 
 // -- Event Listeners --
-dropArea.addEventListener('click', () => fileInput.click());
 
 dropArea.addEventListener('dragover', (e) => {
     e.preventDefault();
