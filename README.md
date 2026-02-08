@@ -1,144 +1,75 @@
-\# SkillSync
+# SkillSync
 
-
-
-SkillSync is an AI-powered resume analysis tool that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS). It compares resumes against job descriptions, identifies missing technical keywords, and provides actionable improvement suggestions using the Gemini 3 API.
-
-
+SkillSync is an AI-powered resume analysis tool that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS). It compares resumes with job descriptions, identifies missing technical keywords commonly used by ATS systems, and provides actionable improvement suggestions using the **Gemini 3 API**.
 
 ---
 
+## Inspiration
 
+Modern hiring pipelines rely heavily on Applicant Tracking Systems that filter resumes based on keyword matching. Many qualified candidates are rejected simply because their resumes lack specific technical terms mentioned in job descriptions, even when they possess the required skills.
 
-\## Inspiration
-
-
-
-Modern hiring pipelines rely heavily on ATS systems that filter resumes based on keyword matching. Many qualified candidates get rejected simply because their resumes don’t include the right technical terms, even when they have the required skills.
-
-We were inspired to build SkillSync to bridge this gap - helping candidates understand why their resume may not be matching a job description and how to improve it using AI-driven insights.
-
-
+SkillSync was built to bridge this gap by helping candidates understand *why* their resume may not be matching a role and *how* they can improve it using AI-driven insights.
 
 ---
 
+## What It Does
 
+SkillSync allows users to:
 
-\## What It Does
-
-
-
-\- Extracts \*\*technical keywords\*\* from job descriptions using Gemini
-
-\- Analyzes resumes to find \*\*matched and missing skills\*\*
-
-\- Calculates an \*\*ATS-style match score\*\*
-
-\- Generates \*\*AI-powered resume improvement suggestions\*\*
-
-\- Runs with a \*\*privacy-first approach\*\* (resume stays client-side)
-
-
+- Upload a PDF resume
+- Paste a job description
+- Extract **pure technical keywords** from the job description using Gemini 3
+- Analyze resumes to identify **matched and missing skills**
+- Calculate an **ATS-style match score**
+- Generate **AI-powered, actionable resume improvement suggestions**
+- Maintain a **privacy-first approach** (resume text is processed client-side)
 
 ---
 
+## Gemini 3 API Usage
 
+SkillSync uses the **Google Gemini 3 API** (via the `gemini-flash-latest` model) for:
 
-\## Gemini 3 API Usage
+- Extracting clean, technical keywords from job descriptions
+- Generating contextual and actionable resume improvement suggestions
 
-
-
-SkillSync uses the \*\*Gemini 3 API\*\* (via the 'gemini-flash-latest' model) for:
-
-
-
-\- Extracting clean, technical keywords from job descriptions  
-
-\- Generating contextual and actionable resume improvement suggestions  
-
-
-
-All keyword-to-resume matching is performed \*\*deterministically in Python\*\* to avoid hallucinations and ensure reliable results.
-
-
+To ensure reliability and avoid hallucinations, all keyword-to-resume matching is performed **deterministically in Python**, while Gemini 3 is used only where generative intelligence adds value.
 
 ---
 
+## How We Built It
 
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** Python with FastAPI  
+- **AI:** Google Gemini 3 API  
+- **Resume Parsing:** PDF.js  
+- **Visualization:** Chart.js  
+- **Communication:** REST APIs with JSON  
 
-\## How We Built It
-
-
-
-\- Frontend: HTML, CSS, JavaScript
-
-\- Backend: Python + FastAPI
-
-\- AI: Google Gemini 3 API
-
-\- Resume parsing: PDF.js
-
-\- Visualization: Chart.js
-
-\- API communication via REST and JSON
-
-
-
-The frontend handles resume parsing and visualization, while the backend focuses on AI-powered analysis and suggestions.
-
-
+The frontend handles resume parsing, user interaction, and visualization.  
+The backend focuses on analysis logic and integrates with Gemini 3 for AI-powered keyword extraction and suggestions.
 
 ---
 
+## System Architecture
 
+![SkillSync Architecture](architecture.png)
 
-\## How to Run Locally
+**Flow Overview:**
 
-
-
-1\. Clone this repository
-
-2\. Create a '.env' file inside the 'backend' folder:
-
-GEMINI\_API\_KEY=AIzaSyBZ0m\_WNrOSQS-CarQ0Sd3qIsC3lgsJfRw
-
-3\. Start the backend server:
-
-python -m uvicorn main:app --reload
-
-4\. Open `frontend/index.html` in your browser
-
-
+1. The user uploads a resume and job description via the web interface.
+2. The frontend sends REST API requests to the FastAPI backend.
+3. The backend:
+   - Uses Gemini 3 to extract technical keywords and generate suggestions.
+   - Performs deterministic keyword matching and scoring.
+4. Results are returned to the frontend and visualized for the user.
 
 ---
 
+## How to Run Locally
 
+1. Clone this repository
+2. Create a `.env` file inside the `backend` folder:
 
-\## Why SkillSync
-
-
-
-SkillSync helps job seekers understand \*\*exactly what technical skills are missing\*\* from their resumes and how to improve them, increasing their chances of passing automated screening systems.
-
-
-
----
-
-
-
-\## Future Improvements
-
-
-
-\- Semantic keyword matching
-
-\- Resume section–specific suggestions
-
-\- Resume version comparison
-
-\- Deployed backend with authentication
-
-
-
-
-
+```bash
+GEMINI_API_KEY=your_api_key_here
