@@ -2,7 +2,21 @@
 
 
 
-SkillSync is a resume analysis tool that uses the \*\*Gemini 3 API\*\* to compare resumes with job descriptions, identify missing technical keywords commonly used by ATS systems, and provide practical, actionable suggestions to improve resume alignment.
+SkillSync is an AI-powered resume analysis tool that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS). It compares resumes against job descriptions, identifies missing technical keywords, and provides actionable improvement suggestions using the Gemini 3 API.
+
+
+
+---
+
+
+
+\## Inspiration
+
+
+
+Modern hiring pipelines rely heavily on ATS systems that filter resumes based on keyword matching. Many qualified candidates get rejected simply because their resumes don’t include the right technical terms, even when they have the required skills.
+
+We were inspired to build SkillSync to bridge this gap - helping candidates understand why their resume may not be matching a job description and how to improve it using AI-driven insights.
 
 
 
