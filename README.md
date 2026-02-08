@@ -72,5 +72,5 @@ The backend focuses on analysis logic and integrates with Gemini 3 for AI-powere
 2. Create a `.env` file inside the `backend` folder:
 
 ```bash
-GEMINI_API_KEY=AIzaSyBZ0m_WNrOSQS-CarQ0Sd3qIsC3lgsJfRw
+GEMINI_API_KEY=your_api_key_here
 
